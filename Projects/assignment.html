@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang= 0 ><head><style>body{font-family:Tahoma, Geneva, sans-serif; margin-left:100px; margin-right:100px; margin-top:50px;margin-bottom:50px;}</style>
+<title>Assignment</title></head><body>
+<style>
+h1.ee{color:#003399; text-align:left; border-bottom-style:solid; font-size:40px;}
+h2.ee{color:#555555; text-align:left; border-bottom-style:solid;}
+p.ee{ line-height:150%; font-size:20px;}
+table.ee{border-collapse:collapse; border: 1px solid black; }
+th.ee{padding:5px;border: 1px solid black;background-color:#003399; color:white; }
+th.ee2{text-align:left; padding:5px;border: 0px solid black; background-color:#EEEEEE;color:#666666;font-weight:normal; }
+th.ee1{padding:5px;border: 1px solid black;background-color:#AAAAAA; color:white; }
+td.ee{padding:10px; border: 1px solid black;}
+td.task{font-weight:bold; text-align:center;border: 1px solid black;}
+td.points{ text-align:center;}
+td.taskDone{font-weight:bold; text-align:center;background-color:#cccccc;padding:10px; border: 1px solid black;}
+.eeerror{ color:#800000;}
+</style>
+<h1 class=ee>Thirteen Digit ISBN Validator</h1>
+<p class=ee>This assignment has a total of 60 points.</p>
+<p class=ee>This assignment requires two workbooks (ISBN13Grader-XX.xlsm and ISBN13Assignment-XX.xlsm) to be located in the same folder.  Be sure you have downloaded them both from the publisher's website.</p>
+<p class=ee>Follow the instructions below precisely.  The grader will rely on your answer being in the specified location.</p>
+<h2 class=ee>Control Logic and Loops</h2>
+<p class=ee>ISBN stands for International Standard Book Number.  It is the common identifier for books and is used around the world.  The numbering scheme was first proposed for use in 1970. The original ISBN standard provided for 10 digits.  In 2007, it was changed to use 13 digits.</p>
+<table class=ee><table class=ee><tr><th class=ee>Task&nbsp;#</th><th class=ee>Points</th><th class=ee>Task Description</th></tr>
+<tr><td class="task">1</td><td class="ee points">
+60</td><td class=ee>
+In the Solution module of the isbn13Assignment.xlsm workbook, you will find a function named isValidISBN13.&nbsp;&nbsp;Modify this function to verify if a value sent to the function is a valid ISBN. The function should return TRUE if the value is a valid ISBN or FALSE if it is not.<br><br>Your function should allow spaces, hyphens, or periods to be used in the number.&nbsp;&nbsp;In fact, any non-numeric characters should be ignored.&nbsp;&nbsp;That is, your function should check to see if there are 13 numeric digits in the input.&nbsp;&nbsp;If there are, your function should check to see that the 13 digits are a well-formed ISBN.<br><br>To determine if a 13-digit number is a valid ISBN, check to see if the last digit is the correct check digit for the number. To calculate the check digit of a 13-digit ISBN with number (87 12345 12345 1) follow the following six steps:<br><br>Step 1: add all digits in even position and multiply the result by 3: (7+2+4+1+3+5)*3=66.&nbsp;&nbsp;(See the table below for clarification on which digits are even and which are odd.)<br><br>Step 2: add all digits in odd position. (8+1+3+5+2+4)=23.<br><br>Step 3: add the results of steps two and three: 66+23=89.<br><br>Step 4: Take the remainder when divided by 10: 89 divided by 10 = 8 with a remainder of 9.<br><br>Step 5: Subtract from 10: 10-9=1, so the check digit here is 1.<br><br>Step 6:&nbsp;&nbsp;If the result of Step 5 is 10, then the check digit is 0.<br><br>Hint: If you are trying to tell if an integer is odd or even, recall that all odd integers when divided by 2 will have a remainder of 1.&nbsp;&nbsp;Alternatively, you can write a For…Next loop that starts with either one or two and then steps by 2 to access odds and evens respectively. <br><br>Note: Be careful when using string values with the plus sign (+). If two strings are combined with the plus sign (+), the result will be concatenation, not addition. That is, while the expression 3+6 evaluates to 9, the expression "3" + "6" evaluates to "36". Recall that string functions (such as mid, left, right) return string values, even if they operate on numeric inputs.<br><br>Note: It may be helpful to use debug.print at various points in your code to be sure that they are correctly calculating the various steps in the solution.&nbsp;&nbsp;However, before you submit your solution, you should delete or disable all debug.print statements.
+<br><br><style> td.ee1{padding:2px; border: 1px solid black;} </style><center><style> td.ee1{padding:5px; border: 1px solid black;}</style><table class=ee><tr><td class=ee1 valign=bottom bgcolor=#95B3D7><b>Index</b></td><td class=ee1 align=center valign=bottom>1</td><td class=ee1 align=center valign=bottom>2</td><td class=ee1 align=center valign=bottom>3</td><td class=ee1 align=center valign=bottom>4</td><td class=ee1 align=center valign=bottom>5</td><td class=ee1 align=center valign=bottom>6</td><td class=ee1 align=center valign=bottom>7</td><td class=ee1 align=center valign=bottom>8</td><td class=ee1 align=center valign=bottom>9</td><td class=ee1 align=center valign=bottom>10</td><td class=ee1 align=center valign=bottom>11</td><td class=ee1 align=center valign=bottom>12</td></tr><tr><td class=ee1 valign=bottom bgcolor=#95B3D7><b>ISBN Digit</b></td><td class=ee1 align=center valign=bottom>8</td><td class=ee1 align=center valign=bottom>7</td><td class=ee1 align=center valign=bottom>1</td><td class=ee1 align=center valign=bottom>2</td><td class=ee1 align=center valign=bottom>3</td><td class=ee1 align=center valign=bottom>4</td><td class=ee1 align=center valign=bottom>5</td><td class=ee1 align=center valign=bottom>1</td><td class=ee1 align=center valign=bottom>2</td><td class=ee1 align=center valign=bottom>3</td><td class=ee1 align=center valign=bottom>4</td><td class=ee1 align=center valign=bottom>5</td></tr><tr><td class=ee1 valign=bottom bgcolor=#95B3D7><b>Position</b></td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td></tr></table></center></td></tr>
+<tr><td class=ee>Total:</td><td class="ee points">
+60
+</td><td class=ee>
+</td></tr>
+</table>
+
+</body></html>
