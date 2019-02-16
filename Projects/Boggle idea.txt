@@ -1,0 +1,3 @@
+Create an array filled with random numbers 1-25 to designate which cell to fill. I'll need to run a check somehow to make sure no duplicates
+Then loop through it and fill the cells. Each die will correspond to a specific array location, but that location number will be random
+Within the for loop you can create an array with random numbers 1-5 to select each letter of the die. 

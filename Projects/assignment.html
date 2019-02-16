@@ -14,19 +14,72 @@ td.points{ text-align:center;}
 td.taskDone{font-weight:bold; text-align:center;background-color:#cccccc;padding:10px; border: 1px solid black;}
 .eeerror{ color:#800000;}
 </style>
-<h1 class=ee>Thirteen Digit ISBN Validator</h1>
-<p class=ee>This assignment has a total of 60 points.</p>
-<p class=ee>This assignment requires two workbooks (ISBN13Grader-XX.xlsm and ISBN13Assignment-XX.xlsm) to be located in the same folder.  Be sure you have downloaded them both from the publisher's website.</p>
-<p class=ee>Follow the instructions below precisely.  The grader will rely on your answer being in the specified location.</p>
-<h2 class=ee>Control Logic and Loops</h2>
-<p class=ee>ISBN stands for International Standard Book Number.  It is the common identifier for books and is used around the world.  The numbering scheme was first proposed for use in 1970. The original ISBN standard provided for 10 digits.  In 2007, it was changed to use 13 digits.</p>
+<h1 class=ee>Working with User Forms</h1>
+<p class=ee>This assignment has a total of 90 points.</p>
+<p class=ee>Follow the instructions below precisely.  The grader will rely on your answer being in the specified location.  Do not modify the names of the controls on the forms.</p>
+<h2 class=ee>Colonial Volunteers</h2>
+<p class=ee>The Colonial Heritage Festival is the largest American Colonial life and re-enactment event in the western United States.  With exhibits from more than 100 artisans, educators, and re-enactors, the event attracts more than 50,000 visitors annually (see http://festival.colonialheritage.org).  
+
+The Colonial Heritage Foundation relies heavily on volunteers for the event’s staffing needs.  People who have an interest in helping are assigned to specific areas in one of three shifts on each day of the event.  The workbook that forms the foundation of this assignment is used for updating volunteer information and for assigning volunteers to shifts for the event.
+
+In this assignment, you will add code to an existing user form make it easier for a user to update volunteer information and to provide data validation to ensure the quality of the data entered.
+
+Note:  Do not use the VBA statement "End" in any part of your code.  This statement will interrupt the grader and prevent your submission from being completed.</p>
 <table class=ee><table class=ee><tr><th class=ee>Task&nbsp;#</th><th class=ee>Points</th><th class=ee>Task Description</th></tr>
 <tr><td class="task">1</td><td class="ee points">
-60</td><td class=ee>
-In the Solution module of the isbn13Assignment.xlsm workbook, you will find a function named isValidISBN13.&nbsp;&nbsp;Modify this function to verify if a value sent to the function is a valid ISBN. The function should return TRUE if the value is a valid ISBN or FALSE if it is not.<br><br>Your function should allow spaces, hyphens, or periods to be used in the number.&nbsp;&nbsp;In fact, any non-numeric characters should be ignored.&nbsp;&nbsp;That is, your function should check to see if there are 13 numeric digits in the input.&nbsp;&nbsp;If there are, your function should check to see that the 13 digits are a well-formed ISBN.<br><br>To determine if a 13-digit number is a valid ISBN, check to see if the last digit is the correct check digit for the number. To calculate the check digit of a 13-digit ISBN with number (87 12345 12345 1) follow the following six steps:<br><br>Step 1: add all digits in even position and multiply the result by 3: (7+2+4+1+3+5)*3=66.&nbsp;&nbsp;(See the table below for clarification on which digits are even and which are odd.)<br><br>Step 2: add all digits in odd position. (8+1+3+5+2+4)=23.<br><br>Step 3: add the results of steps two and three: 66+23=89.<br><br>Step 4: Take the remainder when divided by 10: 89 divided by 10 = 8 with a remainder of 9.<br><br>Step 5: Subtract from 10: 10-9=1, so the check digit here is 1.<br><br>Step 6:&nbsp;&nbsp;If the result of Step 5 is 10, then the check digit is 0.<br><br>Hint: If you are trying to tell if an integer is odd or even, recall that all odd integers when divided by 2 will have a remainder of 1.&nbsp;&nbsp;Alternatively, you can write a For…Next loop that starts with either one or two and then steps by 2 to access odds and evens respectively. <br><br>Note: Be careful when using string values with the plus sign (+). If two strings are combined with the plus sign (+), the result will be concatenation, not addition. That is, while the expression 3+6 evaluates to 9, the expression "3" + "6" evaluates to "36". Recall that string functions (such as mid, left, right) return string values, even if they operate on numeric inputs.<br><br>Note: It may be helpful to use debug.print at various points in your code to be sure that they are correctly calculating the various steps in the solution.&nbsp;&nbsp;However, before you submit your solution, you should delete or disable all debug.print statements.
-<br><br><style> td.ee1{padding:2px; border: 1px solid black;} </style><center><style> td.ee1{padding:5px; border: 1px solid black;}</style><table class=ee><tr><td class=ee1 valign=bottom bgcolor=#95B3D7><b>Index</b></td><td class=ee1 align=center valign=bottom>1</td><td class=ee1 align=center valign=bottom>2</td><td class=ee1 align=center valign=bottom>3</td><td class=ee1 align=center valign=bottom>4</td><td class=ee1 align=center valign=bottom>5</td><td class=ee1 align=center valign=bottom>6</td><td class=ee1 align=center valign=bottom>7</td><td class=ee1 align=center valign=bottom>8</td><td class=ee1 align=center valign=bottom>9</td><td class=ee1 align=center valign=bottom>10</td><td class=ee1 align=center valign=bottom>11</td><td class=ee1 align=center valign=bottom>12</td></tr><tr><td class=ee1 valign=bottom bgcolor=#95B3D7><b>ISBN Digit</b></td><td class=ee1 align=center valign=bottom>8</td><td class=ee1 align=center valign=bottom>7</td><td class=ee1 align=center valign=bottom>1</td><td class=ee1 align=center valign=bottom>2</td><td class=ee1 align=center valign=bottom>3</td><td class=ee1 align=center valign=bottom>4</td><td class=ee1 align=center valign=bottom>5</td><td class=ee1 align=center valign=bottom>1</td><td class=ee1 align=center valign=bottom>2</td><td class=ee1 align=center valign=bottom>3</td><td class=ee1 align=center valign=bottom>4</td><td class=ee1 align=center valign=bottom>5</td></tr><tr><td class=ee1 valign=bottom bgcolor=#95B3D7><b>Position</b></td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td><td class=ee1 align=center valign=bottom>  odd  </td><td class=ee1 align=center valign=bottom>  even  </td></tr></table></center></td></tr>
+2</td><td class=ee>
+In the ribbon of the workbook, you will find a tab named "Colonial Heritage."&nbsp;&nbsp;On that tab, there is a button labeled "Edit."&nbsp;&nbsp;This button is already programmed to open the form named "frmVolunteer." <br><br> Modify the form so that the title bar reads "Edit Volunteer Information" instead of "UserForm1."<br>
+<br><center><img src=caption.gif></center></td></tr>
+<tr><td class="task">2</td><td class="ee points">
+10</td><td class=ee>
+Data about volunteers can be found on the sheet named "Volunteer."&nbsp;&nbsp; On the volunteer form (frmVolunteer), there are already several textboxes.&nbsp;&nbsp;These are used to edit a volunteer’s first name, last name, address, email address, and phone numbers.<br><br>Modify the Volunteer form so that when it is opened (initialized), the textboxes on the form are filled with the appropriate data for the volunteer whose information is on the row with the active cell.
+</td></tr>
+<tr><td class="task">3</td><td class="ee points">
+4</td><td class=ee>
+Modify the Volunteer form so that when it is opened, the checkBox labeled "Has Period Attire" is checked when the column M for the current row shows "Yes".&nbsp;&nbsp;When Column M reads "No", the checkBox should be unchecked and when Column M is blank, the checkBox should should a light grey check (accomplish this by setting the checkBox's value property to an empty string).
+</td></tr>
+<tr><td class="task">4</td><td class="ee points">
+10</td><td class=ee>
+Modify the Volunteer form so that when it is opened, the comboBox labeled "Cell Carrier" has a list populated from the list of carriers in column A of the "Carriers" sheet.&nbsp;&nbsp; 
+</td></tr>
+<tr><td class="task">5</td><td class="ee points">
+10</td><td class=ee>
+Modify the Volunteer form so that when it is opened, the comboBox labeled "Cell Carrier" shows the value from column K for the current row.
+</td></tr>
+<tr><td class="task">6</td><td class="ee points">
+4</td><td class=ee>
+Modify the Volunteer form so that when it is opened, the option button group labeled "Preferred" has an appropriately selected option depending on the value in column L for the current row.&nbsp;&nbsp; If no preferred contact method is recorded in column L, none of the option buttons should be selected.
+</td></tr>
+<tr><td class="task">7</td><td class="ee points">
+8</td><td class=ee>
+Modify the Volunteer form so that when it is opened, the listBox labeled "Areas of Interest" Shows all values located below cell B1 on the "Areas" sheet.&nbsp;&nbsp;Your code should read the values from the area sheet so that when changes are made to the list of areas, the form shows the complete list the next time the form is opened.&nbsp;&nbsp;Your list box should contain the area names, not the area numbers as shown below.&nbsp;&nbsp;You can assume that the area numbers will be contiguous starting with one.<br>
+<br><center><img src=areasOfInterset.gif></center></td></tr>
+<tr><td class="task">8</td><td class="ee points">
+5</td><td class=ee>
+Column N of the "Volunteers" worksheet records the areas that volunteers have expressed interest in.&nbsp;&nbsp;The numbers in this column refer to the Area Number shown in Column A of the "Areas" worksheet.&nbsp;&nbsp;So, a volunteer who has "2,4,12" in Column N has expressed interest in helping the Baker, the Blacksmith and the Cooper.<br><br>Modify the Volunteer form so that when it is opened, the listBox labeled "Areas of Interest" highlights (selects) the appropriate Areas of Interest as recorded in Column N of the "Volunteers" worksheet.<br>
+</td></tr>
+<tr><td class="task">9</td><td class="ee points">
+5</td><td class=ee>
+Modify the form so when the user clicks the "Cancel" button, all changes to data made on the form are discarded and the form is closed. 
+</td></tr>
+<tr><td class="task">10</td><td class="ee points">
+20</td><td class=ee>
+Modify the form so when the user clicks the "OK" button, all data are saved to the appropriate columns of the "Volunteers" worksheet and the form is closed.
+</td></tr>
+<tr><td class="task">11</td><td class="ee points">
+4</td><td class=ee>
+Add Code to the form so that when the user clicks "OK" the program checks to be sure that there is a value provided for the First Name.&nbsp;&nbsp; If no value is provided, the user should be alerted by a message box that displays an appropriate message.&nbsp;&nbsp; When the message box is dismissed, data should not be saved until the user provides a value and clicks "OK" again.<br><br>For this task, you should use the "MessageBox" function that is provided in the Workbook.&nbsp;&nbsp;It is defined on the RibbonX module, but you should not need to refer to it because it works the same as the built-in msgbox function.&nbsp;&nbsp;The difference is that the built in msgBox function will halt the operation of the automatic grader, while the MessageBox function is designed to work with the grader.
+</td></tr>
+<tr><td class="task">12</td><td class="ee points">
+4</td><td class=ee>
+Add Code to the form so that when the user clicks "OK" the program checks to be sure that there is a value provided for the Last Name.&nbsp;&nbsp; If no value is provided, the user should be alerted by a message box that displays an appropriate message.&nbsp;&nbsp; When the message box is dismissed, data should not be saved until the user provides a value and clicks "OK" again.<br><br>For this task, you should use the "MessageBox" function that is provided in the Workbook.&nbsp;&nbsp;It is defined on the RibbonX module, but you should not need to refer to it because it works the same as the built-in msgbox function.&nbsp;&nbsp;The difference is that the built in msgBox function will halt the operation of the automatic grader, while the MessageBox function is designed to work with the grader.
+</td></tr>
+<tr><td class="task">13</td><td class="ee points">
+4</td><td class=ee>
+Add Code to the form so that when the user clicks "OK" the program checks to be sure that if a Cell Carrier is specified, a Cell Phone Number is also provided.&nbsp;&nbsp; If not, the user should be alerted by a message box that displays an appropriate message.&nbsp;&nbsp; When the message box is dismissed, data should not be saved until the user provides a value and clicks "OK" again.<br><br>For this task, you should use the "MessageBox" function that is provided in the Workbook.&nbsp;&nbsp;It is defined on the RibbonX module, but you should not need to refer to it because it works the same as the built-in msgbox function.&nbsp;&nbsp;The difference is that the built in msgBox function will halt the operation of the automatic grader, while the MessageBox function is designed to work with the grader.
+</td></tr>
 <tr><td class=ee>Total:</td><td class="ee points">
-60
+90
 </td><td class=ee>
 </td></tr>
 </table>
